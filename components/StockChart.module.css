@@ -1,0 +1,30 @@
+.chartWrapper {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+    padding: 24px 24px 0 24px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.header p {
+    color: #666666;
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+}

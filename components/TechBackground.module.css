@@ -1,0 +1,11 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #050505 100%);
+    /* Fundo Dark profundo */
+    overflow: hidden;
+}

@@ -1,57 +1,55 @@
-.searchBar {
+.searchWrapper {
   position: relative;
   width: 100%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .input {
-  padding: 12px 16px;
-  font-size: 14px;
-  border: 1px solid #d0d0d0;
-  border-radius: 0;
+  width: 100%;
+  padding: 18px 24px;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #000000;
+  transition: all 0.2s ease;
   outline: none;
-  background: #ffffff;
-  color: #1a1a1a;
-  font-family: inherit;
-  letter-spacing: 0.3px;
-  transition: border-color 0.15s ease;
-}
-
-.input:focus {
-  border-color: #000000;
-  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .input::placeholder {
   color: #999999;
 }
 
+.input:focus {
+  border-color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .suggestions {
   position: absolute;
-  top: calc(100% + 4px);
+  top: 105%;
   left: 0;
-  right: 0;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #d0d0d0;
-  border-radius: 0;
-  background: #ffffff;
-  max-height: 350px;
-  overflow-y: auto;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
   z-index: 100;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .suggestionItem {
-  padding: 12px 16px;
+  padding: 16px 20px;
   cursor: pointer;
-  border-bottom: 1px solid #f0f0f0;
-  font-size: 13px;
-  color: #1a1a1a;
-  transition: background-color 0.1s ease;
+  border-bottom: 1px solid #F5F5F5;
+  transition: background 0.1s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .suggestionItem:last-child {
@@ -59,20 +57,18 @@
 }
 
 .suggestionItem:hover {
-  background-color: #fafafa;
+  background: #F8F9FA;
+  border-left: 2px solid #000000;
 }
 
-.suggestionItem:active {
-  background-color: #f0f0f0;
+.suggestionTitle {
+  font-weight: 600;
+  color: #000000;
+  font-size: 14px;
+  margin-bottom: 4px;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .searchBar {
-    max-width: 100%;
-  }
-
-  .input {
-    font-size: 16px;
-  }
+.suggestionDesc {
+  font-size: 12px;
+  color: #666666;
 }

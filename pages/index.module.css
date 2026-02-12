@@ -1,66 +1,81 @@
 .main {
   min-height: 100vh;
-  background: #ffffff;
-  color: #1a1a1a;
+  color: #111111;
+  /* Preto para leitura */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
 }
 
 .header {
-  background: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 32px 24px;
-  margin-bottom: 32px;
-}
-
-.header > div:first-child {
-  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  /* Leve transparência branca */
+  border-bottom: 1px solid #EAEAEA;
+  padding: 60px 24px 40px;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 10;
 }
 
 .title {
-  margin: 0 0 8px 0;
-  font-size: 32px;
+  margin: 0 0 16px 0;
+  font-size: 48px;
   font-weight: 700;
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
   color: #000000;
 }
 
 .tagline {
   margin: 0;
-  font-size: 14px;
-  color: #666666;
-  letter-spacing: 0.3px;
+  font-size: 16px;
+  color: #555555;
+  letter-spacing: 0.5px;
+  font-weight: 400;
 }
 
 .searchContainer {
-  max-width: 500px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 48px;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px 32px;
+  padding: 0 24px 64px;
+  position: relative;
+  z-index: 5;
 }
 
 .content {
-  background: #ffffff;
+  background: transparent;
+  padding: 0;
 }
 
 .error {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto 24px;
   padding: 16px 24px;
-  background: #fafafa;
-  border: 1px solid #d0d0d0;
-  border-radius: 0;
+  border: 1px solid #ffcccc;
   color: #d32f2f;
+  background: #ffebee;
   font-size: 14px;
+  text-align: center;
+  border-radius: 4px;
 }
 
 .loading {
   text-align: center;
-  padding: 48px 24px;
-  font-size: 16px;
-  color: #666666;
-  letter-spacing: 0.3px;
+  padding: 64px 24px;
+  font-size: 14px;
+  color: #888888;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* Popular Suggestions Section */
@@ -69,37 +84,46 @@
 }
 
 .sectionTitle {
-  margin: 0 0 24px 0;
-  font-size: 20px;
+  margin: 0 0 32px 0;
+  font-size: 13px;
   font-weight: 600;
-  color: #000000;
-  letter-spacing: -0.5px;
+  color: #333333;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sectionTitle::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  background: #E0E0E0;
 }
 
 .suggestionsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
+  gap: 24px;
 }
 
 .suggestionCard {
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  padding: 20px;
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  padding: 24px;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.2s ease;
   text-align: left;
   font-family: inherit;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .suggestionCard:hover {
   border-color: #000000;
-  background: #fafafa;
-}
-
-.suggestionCard:active {
-  background: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
 }
 
 .cardTitle {
@@ -107,56 +131,40 @@
   font-size: 16px;
   font-weight: 600;
   color: #000000;
-  letter-spacing: -0.3px;
 }
 
 .cardDescription {
-  margin: 0 0 12px 0;
-  font-size: 13px;
-  color: #666666;
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: #555555;
   line-height: 1.5;
 }
 
 .cardSource {
   margin: 0;
   font-size: 11px;
-  color: #999999;
+  color: #888888;
   text-transform: uppercase;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.5px;
+  border: 1px solid #F0F0F0;
+  background: #F9F9F9;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
-  .main {
-    padding: 20px 16px;
-  }
-
   .header {
-    flex-direction: column;
+    padding: 40px 20px;
     align-items: stretch;
-    margin-bottom: 32px;
-    gap: 24px;
-    padding-bottom: 24px;
+    text-align: left;
   }
 
   .title {
-    font-size: 24px;
+    font-size: 32px;
   }
 
-  .searchContainer {
-    width: 100%;
-    justify-content: stretch;
-    min-width: auto;
-  }
-
-  .content {
-    padding: 20px;
-  }
-
-  .popularSection {
-    padding: 20px;
-  }
-
-  .suggestionsGrid {
-    grid-template-columns: 1fr;
+  .sectionTitle::after {
+    display: none;
   }
 }
